@@ -1,1 +1,175 @@
-Hello World
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coding Notes - better here than my brain...</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/super-style.css" />
+</head>
+
+<body class="">
+  <nav>
+    <ul class="float-left">
+      <li><b>Roar Flolo</b></li>
+    </ul>
+    <ul class="float-right">
+      <li><a href="https://github.com/roarflolo"><i class="fab fa-github">&nbsp;</i></a></li>
+      <li><a href="https://twitter.com/roarflolo"><i class="fab fa-twitter">&nbsp;</i></a></li>
+      <li><a href="https://instagram.com/roarflolo"><i class="fab fa-instagram">&nbsp;</i></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Coding Notes</h1><span>better here than my brain...</span>
+    </header>
+    <p>A lot of the stuff here is the plumbing, duct-tape, and WD-40 needed to get to the fun part</p>
+
+    <header>
+      <h2>XCode command line tools</h2><span>Feb 3 2022</span>
+    </header>
+    <ul>
+      <li><code>xcode-select –install</code></li>
+    </ul>
+
+
+    <header>
+      <h2>Homebrew for MacOS</h2><span>Feb 3 2022</span>
+    </header>
+    <p>Homebrew makes life a lot easier.</p>
+    <ul>
+      <li><a href="https://brew.sh/">Homebrew</a></li>
+      <li><a href="https://formulae.brew.sh/formula/cmake">Homebrew install Cmake</a></li>
+      <li><a href="https://formulae.brew.sh/formula/subversion">Homebrew install SVN</a></li>
+    </ul>
+
+
+    <header>
+      <h2>XCode Static Library for C++</h2><span>Feb 3 2022 - XCode 13.0</span>
+    </header>
+    <ul>
+      <li>File > New Project</li>
+      <li>macOS</li>
+      <li>Library (two are listed, I can't spot a difference, but it's the second one)</li>
+      <li>Product Name: ...</li>
+      <li>Team: ...</li>
+      <li>Org Identifier: ...</li>
+      <li>Bundle Identifier: ...</li>
+      <li>Framework: None (Plain C/C++ Library)</li>
+      <li>Type: Static</li>
+    </ul>
+
+
+    <header>
+      <h2>XCode Copy Build Result</h2><span>Feb 3 2022 - XCode 13.0</span>
+    </header>
+    <p>Copy the library file</p>
+    <ul>
+      <li>Select Target</li>
+      <li>Select Build Phases</li>
+      <li>Click the Plus Button</li>
+      <li>New Copy Files Phase</li>
+      <li>Destination: Absolute path</li>
+      <li>Path: $PROJECT_DIR/dist/$CONFIGURATION</li>
+      <li>Click the Plus button on the bottom and select the .a file to copy</li>
+      <li>Do this for all targets</li>
+    </ul>
+    <p>Copy the header files</p>
+    <ul>
+      <li>Select Target</li>
+      <li>Select Build Phases</li>
+      <li>Click the Plus Button</li>
+      <li>New Copy Files Phase</li>
+      <li>Destination: Absolute path</li>
+      <li>Path: $PROJECT_DIR/dist/$CONFIGURATION/include/library-name</li>
+      <li>Click the Plus button on the bottom and select all the .h files to copy</li>
+      <li>Do this for all targets</li>
+    </ul>
+
+
+    <header>
+      <h2>XCode - Command Line Build</h2><span>Feb 3 2022 - XCode 13.0</span>
+    </header>
+    <h3>List available SDKs</h3>
+    <ul>
+      <li><code>xcodebuild -showsdks</code></li>
+    </ul>
+
+    <h3>List schemes and other stuff</h3>
+    <ul>
+      <li><code>xcodebuild -list -workspace TestLib2.xcworkspace</code></li>
+      <li><code>xcodebuild -list -project TestLib2.xcodeproj</code></li>
+    </ul>
+
+    <h3>Clean</h3>
+    <ul>
+      <li><code>xcodebuild clean -workspace TestLib2-workspace.xcworkspace -sdk macosx11.3 -scheme testLib2-macOS</code>
+      </li>
+      <li><code>xcodebuild clean -project TestLib2.xcodeproj</code></li>
+    </ul>
+
+    <h3>Build</h3>
+    <ul>
+      <li><code>xcodebuild build -workspace TestLib2-workspace.xcworkspace -sdk macosx11.3 -scheme testLib2-macOS -configuration
+      Debug</code></li>
+      <li><code>xcodebuild build -workspace TestLib2-workspace.xcworkspace -sdk iphoneos15.0 -scheme testLib2-iOS -configuration
+      Debug</code></li>
+      <li>
+        <code>xcodebuild build -project TestLib2.xcodeproj -sdk iphoneos15.0 -target testLib2-iOS -configuration Debug</code>
+      </li>
+    </ul>
+
+
+    <header>
+      <h2>OpenGL App on MacOS</h2><span>Feb 3 2022</span>
+    </header>
+    <p>Download and build GLFW for MacOS</p>
+    <ul>
+      <li><a href="https://www.glfw.org/docs/latest/compile.html">GLFW - Build</a></li>
+      <li>GLFW uses GLAD for extensions <a href="https://glad.dav1d.de/">GLAD - Multi-Language GL/GLES/EGL/GLX/WGL
+          Loader-Generator based on the official specs</a></li>
+      <li>Clone GLFW from <a href="https://github.com/glfw/glfw">GLFW Github</a> into the folder <b>glfw</b></li>
+      <li>Use CMake to produce a XCode project in thew folder <b>glfw-xcode</b> - use that to build GLFW and run the
+        examples</li>
+    </ul>
+
+    <p>Create a new MacOS Game App</p>
+    <ul>
+      <li>XCode / File / New Project</li>
+      <li>Game</li>
+      <li>Metal</li>
+      <li>Objective-C</li>
+      <li>Build and Run should work fine</li>
+    </ul>
+
+    <p>Run as a GLFW App</p>
+    <ul>
+      <li>Copy the triangle-opengl.cpp example file from GLFW to your new MacOS Game App</li>
+      <li>Remove everything except:
+        <ul>
+          <li>AppDelegate</li>
+          <li>Assets</li>
+          <li>Main (storyboard)</li>
+          <li>Entitlements</li>
+          <li>triangle-opengl.cpp</li>
+        </ul>
+
+      </li>
+      <li>Linker - Add glfw-xcode/src/Debug/libglfw3.a</li>
+      <li>Include Files - add glfw/deps glfw/include</li>
+      <li>Build and Run should work fine</li>
+    </ul>
+  </main>
+</body>
+
+</html>
