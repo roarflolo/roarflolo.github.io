@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/vrgorilla.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Coding Notes - better here than my brain...</title>
 
@@ -15,19 +16,24 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="/super-style.css" />
+
+  <style>
+  </style>
 </head>
 
 <body class="">
-  <nav>
-    <ul class="float-left">
-      <li><b>Roar Flolo</b></li>
-    </ul>
-    <ul class="float-right">
-      <li><a href="https://github.com/roarflolo"><i class="fab fa-github">&nbsp;</i></a></li>
-      <li><a href="https://twitter.com/roarflolo"><i class="fab fa-twitter">&nbsp;</i></a></li>
-      <li><a href="https://instagram.com/roarflolo"><i class="fab fa-instagram">&nbsp;</i></a></li>
-    </ul>
-  </nav>
+  <div class="nav-header">
+    <div class="nav-section">
+      <div class="nav-item"><img src="/vrgorilla.svg" width="32px" height="32px"></div>
+      <div class="nav-item"><b>Roar Flolo</b></div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-item"><a href="https://github.com/roarflolo"><i class="fab fa-github">&nbsp;</i></a>
+      </div>
+      <div class="nav-item"><a href="https://twitter.com/roarflolo"><i class="fab fa-twitter">&nbsp;</i></a></div>
+      <div class="nav-item"><a href="https://instagram.com/roarflolo"><i class="fab fa-instagram">&nbsp;</i></a></div>
+    </div>
+  </div>
 
   <main>
     <header>
@@ -120,12 +126,15 @@
 
     <h3>Build</h3>
     <ul>
-      <li><code>xcodebuild build -workspace TestLib2-workspace.xcworkspace -sdk macosx11.3 -scheme testLib2-macOS -configuration
-      Debug</code></li>
-      <li><code>xcodebuild build -workspace TestLib2-workspace.xcworkspace -sdk iphoneos15.0 -scheme testLib2-iOS -configuration
-      Debug</code></li>
+      <li><code>xcodebuild build -workspace TestLib2-workspace.xcworkspace -sdk macosx11.3 -scheme testLib2-macOS
+          -configuration
+          Debug</code></li>
+      <li><code>xcodebuild build -workspace TestLib2-workspace.xcworkspace -sdk iphoneos15.0 -scheme testLib2-iOS
+          -configuration
+          Debug</code></li>
       <li>
-        <code>xcodebuild build -project TestLib2.xcodeproj -sdk iphoneos15.0 -target testLib2-iOS -configuration Debug</code>
+        <code>xcodebuild build -project TestLib2.xcodeproj -sdk iphoneos15.0 -target testLib2-iOS -configuration
+          Debug</code>
       </li>
     </ul>
 
