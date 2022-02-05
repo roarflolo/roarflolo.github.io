@@ -42,7 +42,7 @@
     <p>A lot of the stuff here is the plumbing, duct-tape, and WD-40 needed to get to the fun part</p>
 
     <header>
-      <h2>XCode command line tools</h2><span>Feb 3 2022</span>
+      <h2>XCode command line tools</h2><span>Feb 2022</span>
     </header>
     <ul>
       <li><code>xcode-select –install</code></li>
@@ -50,7 +50,7 @@
 
 
     <header>
-      <h2>Homebrew for MacOS</h2><span>Feb 3 2022</span>
+      <h2>Homebrew for MacOS</h2><span>Feb 2022</span>
     </header>
     <p>Homebrew makes life a lot easier.</p>
     <ul>
@@ -61,7 +61,7 @@
 
 
     <header>
-      <h2>XCode Static Library for C++</h2><span>Feb 3 2022 - XCode 13.0</span>
+      <h2>XCode Static Library for C++</h2><span>Feb 2022 - XCode 13</span>
     </header>
     <ul>
       <li>File > New Project</li>
@@ -77,7 +77,7 @@
 
 
     <header>
-      <h2>XCode Copy Build Result</h2><span>Feb 3 2022 - XCode 13.0</span>
+      <h2>XCode Copy Build Result</h2><span>Feb 2022 - XCode 13</span>
     </header>
     <p>Copy the library file</p>
     <ul>
@@ -104,7 +104,7 @@
 
 
     <header>
-      <h2>XCode - Command Line Build</h2><span>Feb 3 2022 - XCode 13.0</span>
+      <h2>XCode - Command Line Build</h2><span>Feb 2022 - XCode 13</span>
     </header>
     <h3>List available SDKs</h3>
     <ul>
@@ -140,14 +140,15 @@
 
 
     <header>
-      <h2>OpenGL App on MacOS</h2><span>Feb 3 2022</span>
+      <h2>OpenGL App on MacOS</h2><span>Feb 2022</span>
     </header>
-    <p>Download and build GLFW for MacOS</p>
+    <p>Create a OpenGL App on MacOS using GLFW</p>
+    <p>Build GLFW for MacOS</p>
     <ul>
+      <li>Clone GLFW from <a href="https://github.com/glfw/glfw">GLFW Github</a> into the folder <b>glfw</b></li>
       <li><a href="https://www.glfw.org/docs/latest/compile.html">GLFW - Build</a></li>
       <li>GLFW uses GLAD for extensions <a href="https://glad.dav1d.de/">GLAD - Multi-Language GL/GLES/EGL/GLX/WGL
           Loader-Generator based on the official specs</a></li>
-      <li>Clone GLFW from <a href="https://github.com/glfw/glfw">GLFW Github</a> into the folder <b>glfw</b></li>
       <li>Use CMake to produce a XCode project in thew folder <b>glfw-xcode</b> - use that to build GLFW and run the
         examples</li>
     </ul>
@@ -181,7 +182,7 @@
 
 
     <header>
-      <h2>ThreeJS Development Setup</h2><span>Feb 4 2022</span>
+      <h2>ThreeJS Development Setup</h2><span>Feb 2022</span>
     </header>
     <ul>
       <li>Using Visual Studio Code</li>
@@ -195,6 +196,26 @@
       <li>npm run dev</li>
       <li>Project running on http://localhost:3000/</li>
     </ul>
+
+
+    <header>
+      <h2>Git Stuff</h2><span>Feb 2022</span>
+    </header>
+
+    <p>Add your SSH key(s) to Github, Bitbucket, whatever</p>
+
+    <p>Generally I use <a href="https://www.sourcetreeapp.com/">SourceTree</a> and just live my life, but sometimes...</p>
+    
+    <p>Clone a specific branch</p>
+    <ul>
+      <li><code>git clone --branch &lt;branchname&gt; &lt;repo-url&gt;</code></li>
+    </ul>
+
+    <p>Clone only the latest version of the repo</p>
+    <ul>
+      <li><code>git clone --depth 1 &lt;repo-url&gt;</code></li>
+    </ul>
+    
 
   </main>
 </body>
