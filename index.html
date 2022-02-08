@@ -117,6 +117,11 @@
       <li><code>xcodebuild -list -project TestLib2.xcodeproj</code></li>
     </ul>
 
+    <h3>List Build Settings</h3>
+    <ul>
+      <li><code>xcodebuild -project TestLib2.xcodeproj -target testLib2-macOS -showBuildSettings</code></li>
+    </ul>
+
     <h3>Clean</h3>
     <ul>
       <li><code>xcodebuild clean -workspace TestLib2-workspace.xcworkspace -sdk macosx11.3 -scheme testLib2-macOS</code>
@@ -182,6 +187,38 @@
 
 
     <header>
+      <h2>OpenGL and Metal on MacOS and iOS</h2><span>Feb 2022</span>
+    </header>
+    <ul>
+      <li><a
+          href="https://developer.apple.com/documentation/metal/migrating_opengl_code_to_metal?language=objc">Migrating
+          OpenGL Code to Metal</a></li>
+    </ul>
+
+
+    <header>
+      <h2>iOS App Life Cycle</h2><span>Feb 2022</span>
+    </header>
+    <ul>
+      <li>
+        main() calls <a
+          href="https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain">UIApplicationMain</a>
+        <ul>
+          <li>Creates the application object and the application delegate and sets up the event cycle.</li>
+          <li><a href="https://developer.apple.com/documentation/uikit/uiapplication">UIApplication</a></li>
+          <li><a href="https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle">Managing Your App's Life Cycle</a></li>
+          <li>iOS 12 and earlier: <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate">UIApplicationDelegate</a></li>
+          <li>iOS 13 and later: <a href="https://developer.apple.com/documentation/uikit/uiscenedelegate">UISceneDelegate</a></li>
+          <li><a href="https://developer.apple.com/documentation/uikit/app_and_environment/responding_to_the_launch_of_your_app">Responding to the Launch of Your App</a></li>
+        </ul>
+      </li>
+      <li><a href="https://developer.apple.com/documentation/uikit/uiviewcontroller">UIViewController</a> - An object that manages a view hierarchy for your UIKit app.</li>
+      <li><a href="https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457">View Controller Programming Guide for iOS</a></li>
+      <li>UIViewController inherits from <a href="https://developer.apple.com/documentation/uikit/uiresponder">UIResponder</a> - An abstract interface for responding to and handling events.</li>
+    </ul>
+
+
+    <header>
       <h2>ThreeJS Development Setup</h2><span>Feb 2022</span>
     </header>
     <ul>
@@ -199,13 +236,26 @@
 
 
     <header>
+      <h2>Web Browser Input (Gamepad, Touch)</h2><span>Feb 2022</span>
+    </header>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events">Touch Events</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API">Using the Gamepad
+          API</a></li>
+      <li><a href="https://xtrp.io/blog/2020/12/15/how-to-use-the-html5-gamepad-api/">HTML5 Gamepad API - Examples</a>
+      </li>
+    </ul>
+
+
+    <header>
       <h2>Git Stuff</h2><span>Feb 2022</span>
     </header>
 
     <p>Add your SSH key(s) to Github, Bitbucket, whatever</p>
 
-    <p>Generally I use <a href="https://www.sourcetreeapp.com/">SourceTree</a> and just live my life, but sometimes...</p>
-    
+    <p>Generally I use <a href="https://www.sourcetreeapp.com/">SourceTree</a> and just live my life, but sometimes...
+    </p>
+
     <p>Clone a specific branch</p>
     <ul>
       <li><code>git clone --branch &lt;branchname&gt; &lt;repo-url&gt;</code></li>
@@ -215,7 +265,7 @@
     <ul>
       <li><code>git clone --depth 1 &lt;repo-url&gt;</code></li>
     </ul>
-    
+
 
   </main>
 </body>
